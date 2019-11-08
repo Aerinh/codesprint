@@ -1,0 +1,184 @@
+/*Variables*/
+$blue : rgba(81,195,184,1);
+$white : white ;
+$grey :#999;
+$form :  #9EAB9F;
+
+/*mixins*/
+@mixin center {
+    display: flex;
+    justify-content: center;
+}
+
+/*body*/
+body {
+    font-family : 'Raleway';
+    color : $white;
+    background: -moz-linear-gradient(270deg, rgba(34,46,64,1) 0%, rgba(81,195,184,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(34,46,64,1)), color-stop(100%, rgba(81,195,184,1)));
+    background: -webkit-linear-gradient(270deg, rgba(34,46,64,1) 0%, rgba(81,195,184,1) 100%);
+    background: linear-gradient(180deg, rgba(34,46,64,1) 0%, rgba(81,195,184,1) 100%);
+    height : 685px;
+}
+
+
+
+/*ARRIEREPLAN*/
+#arriereplan {
+    @include center;
+    align-items: center;
+    padding-top : 3%;
+}
+
+/*CARRE FORMULAIRE*/
+#carreformulaire {
+    background-color : $white ;
+    width: 55%;
+    border-radius: 8px;
+    height: 584px;
+    display: flex;
+}
+
+.carrebleu {
+    background-color :$blue;
+    background-image: url("../imgs/splat.png");
+    background-position: 25% 235%;
+    background-repeat: no-repeat;
+    width: 50%;
+    border-radius: 8px 0px 0px 8px;
+    @include center;
+    flex-direction : column;
+    align-items : center;
+
+    H1 {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    padding: 1% 5% 1% 5%;
+    border-color: $white ;
+    font-size: 43px;
+   }
+
+    .text {
+        text-align : center;
+        padding-left: 6%;
+        padding-right: 6%;
+        line-height: 25px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 23.5%;
+        top: 9%;
+    }
+}
+
+
+/*CARREGRIS*/
+.carregris {
+    border-radius: 8px;
+    background: linear-gradient(42deg, rgba(42,46,54,1) 0%, rgba(97,107,125,1) 100%);
+    width: 50%;
+    border-radius: 0px 8px 8px 0px;
+
+    .loginsignup {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 19%;
+        
+        .lelogin {
+            border-bottom : 2px solid;
+            color : $blue;
+            height: 40px;
+
+        .login {
+        color : $white !important;
+        }
+    }
+         .signup {
+            color : $grey;
+        }
+}
+
+  
+/*formulaire*/
+.leformulaire {
+        padding-left: 19%;
+
+    .form {
+        @include center;
+        flex-direction: column;
+        width: 95%;
+        padding-top: 10%;
+        border-bottom: 1px solid;
+        border-color : $form;
+        width: 267px;
+        padding-bottom: 9px;
+
+        input {
+        border: none;
+        background-color:rgba(128, 128, 128, 0);
+        
+        font-size: 17px;
+        color :  $form;
+        }  
+    }
+
+    .form2 {
+        @extend .form ;
+    }
+}
+
+    .remember { 
+        padding-left : 20%;
+        color : $form;
+        padding-top : 5%;
+        label::after {
+            border : $blue;
+        }
+
+    }
+
+    button {
+        color: $white;
+        background: $blue;
+        border: none;
+        border-radius: 20px;
+        margin-left : 20%;
+        margin-top: 5%;
+        padding: 7px 42px 10px 42px;
+        font-size: 16px;
+
+    }
+
+    .forgot {
+        display: flex;
+        margin-left : 16%;
+        margin-top: 2%;
+
+        i {
+            padding-top: 7%;
+            padding-right: 2%;
+            color : grey;
+        }
+
+        p {
+            border-bottom: 2px solid;
+            padding: 1% 0% 1% 0%;
+            border-color: $blue;
+
+        }
+    }
+}
+
+
+/*checkbox*/
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+	content: '✔';
+	position: absolute;
+	top: 49.4%;
+	left: 55.7%;
+	font-size: 19px;
+	color: $blue;
+	line-height: 0;   
+}
